@@ -1,8 +1,8 @@
-fresto-aum0
+fresto-aum
 ==========
 
-This repository is to maintain a target application under monitoring (aum).
-This aum is based on following frameworks and codes;
+This repository is to maintain target applications under monitoring (aum).
+The first aum is based on following frameworks and codes;
 - jQuery
 - Spring framework
 - MyBATIS
