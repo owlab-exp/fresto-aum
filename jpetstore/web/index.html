@@ -1,17 +1,41 @@
 <HTML><HEAD><TITLE>JPetStore Demo</TITLE>
 <META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+	<script>
+		var clientIP;
+		function getip(json){
+			//alert(json.host);
+			clientIP = json.host;
+		}
+	</script>
+	<script src="http://smart-ip.net/geoip-json?callback=getip"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('a').on("click", function(e) {
+				var href = this.href;
+				var target = this.target;
+				var timestamp = new Date().getTime();
+				alert(href + ',' + target + ',' + timestamp + ',' + clientIP);
+
+				// To disable the default action.
+				//e.preventDefault();
+				return true;
+
+			});
+			//$('img').on("click", function() {
+			//	alert('IMG');
+			//	return;
+			//});
+		});
+	</script>
 </HEAD>
 
 <BODY bgColor=white>
 <TABLE background="images/bkg-topbar.gif" border=0 cellSpacing=0 cellPadding=5 width="100%">
   <TBODY>
   <TR>
-    <TD><A href="shop/index.do"><IMG border=0
-
-      src="images/logo-topbar.gif"></A> </TD>
-    <TD align=right><A href="shop/viewCart.do"><IMG border=0
-
-      name=img_cart src="images/cart.gif"></A>
+	  <TD><A href="shop/index.do"><IMG border=0 src="images/logo-topbar.gif"></A> </TD>
+    <TD align=right><A href="shop/viewCart.do"><IMG border=0 name=img_cart src="images/cart.gif"></A>
       <IMG border=0 src="images/separator.gif">
 
       <A href="shop/signonForm.do" >
