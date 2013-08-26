@@ -49,7 +49,7 @@ Repeat password:</td><td>
 </td></tr></table>
 
 <br /><center>
-	<input border="0" type="image" src="<c:url value="images/button_submit.gif"/>" name="submit" value="Save Account Information" />
+<input border="0" type="image" src="../images/button_submit.gif" name="submit" value="Save Account Information" />
 </center>
 
 </html:form>
