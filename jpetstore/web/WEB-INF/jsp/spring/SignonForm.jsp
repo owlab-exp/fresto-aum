@@ -33,7 +33,7 @@
 
 <center>
 <a href="<c:url value="/shop/newAccount.do"/>">
-	<img border="0" src="<c:url value="images/button_register_now.gif"/>" />
+	<img border="0" src="<c:url value="/images/button_register_now.gif"/>" />
 </a>
 </center>
 
