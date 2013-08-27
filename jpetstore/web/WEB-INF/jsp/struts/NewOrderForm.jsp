@@ -53,7 +53,7 @@ Country: </TD><TD><html:text size="15" name="workingOrderForm" property="order.b
 
 </TABLE>
 <P>
-<input type="image" src="<c:url value="/images/button_submit.gif"/>">
+<input type="image" src="../images/button_submit.gif">
 
 </html:form>
 

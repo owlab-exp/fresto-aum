@@ -1,0 +1,81 @@
+<project name="My JPetStore" default="dist" basedir=".">
+<!-- Define the properties used by the build -->
+<property name="app.name"      value="jpetstore"/>
+<property name="build.home"    value="${basedir}/build"/>
+<property name="dist.home"     value="${basedir}/dist"/>
+<property name="docs.home"     value="${basedir}/docs"/>
+<property name="lib.home"     value="${basedir}/lib"/>
+<property name="setup.home"     value="${basedir}/setup"/>
+<property name="src.home"      value="${basedir}/src"/>
+<property name="test.home"      value="${basedir}/test"/>
+<property name="web.home"      value="${basedir}/web"/>
+<property name="tcserver.home"      value="/working/servers/tomcat7"/>
+
+<target name="help">
+	<echo>You can use the following targets:</echo>
+	<echo> </echo>
+	<echo>  help    : (default) Prints this message </echo>
+	<echo>  all     : Cleans, compiles, packages, and deployes application</echo>
+	<echo>  clean   : Deletes work directories</echo>
+	<echo>  compile : Compiles servlets into class files</echo>
+	<echo>  dist    : Packages artifacts into a deployable WAR</echo>
+	<echo>  deploy  : Packages artifacts into a deployable WAR</echo>
+	<echo></echo>
+	<echo>For example, to clean, compile, and package all at once, run:</echo>
+	<echo>prompt> ant dist </echo>
+</target>
+
+<!-- Define the CLASSPATH -->
+<path id="compile.classpath">
+	<fileset dir="${tcserver.home}/bin">
+		<include name="*.jar"/>
+	</fileset>
+	<fileset dir="${tcserver.home}/lib">
+		<include name="*.jar"/>
+	</fileset>
+	<pathelement location="${tcserver.home}/lib"/>
+	<fileset dir="${lib.home}">
+		<include name="*.jar"/>
+	</fileset>
+</path>
+
+<target name="all" depends="clean,compile,dist,deploy" description="Clean work dirs, then compile create a WAR, and deploy"/>
+
+<target name="clean" description="Delete old build and dist directories">
+	<delete dir="${build.home}"/>
+	<delete dir="${dist.home}"/>
+</target>
+
+<target name="prepare" depends="clean" description="Create working dirs and copy static files to work dir">
+	<mkdir  dir="${dist.home}"/>
+	<mkdir  dir="${build.home}/WEB-INF/classes"/>
+	<mkdir  dir="${build.home}/WEB-INF/lib"/>
+	<!-- Copy static HTML and JSP files to work dir -->
+	<copy todir="${build.home}">
+		<fileset dir="${web.home}"/>
+	</copy>
+</target>
+
+<target name="compile" depends="prepare" description="Compile Java sources and copy to WEB-INF/classes dir">
+	<javac srcdir="${src.home}/java" destdir="${build.home}/WEB-INF/classes">
+		<classpath refid="compile.classpath"/>
+	</javac>
+	<copy  todir="${build.home}/WEB-INF/classes">
+		<fileset dir="${src.home}/java" excludes="**/*.java"/>
+	</copy>
+</target>
+
+<target name="dist" depends="compile" description="Create WAR file for binary distribution">
+	<copy todir="${build.home}/WEB-INF/lib">
+		<fileset dir="${lib.home}"/>
+	</copy>
+	<jar jarfile="${dist.home}/${app.name}.war" basedir="${build.home}"/>
+</target>
+
+<target name="deploy" depends="dist" description="Deploy on TCServer">
+	<copy todir="${tcserver.home}/webapps" overwrite="true" flatten="true">
+		<file file="${dist.home}/${app.name}.war"/>
+	</copy>
+</target>
+
+</project> 

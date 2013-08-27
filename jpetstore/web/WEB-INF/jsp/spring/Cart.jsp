@@ -41,14 +41,14 @@
   <td align="right"><fmt:formatNumber value="${cartItem.item.listPrice}" pattern="$#,##0.00" /></td>
   <td align="right"><fmt:formatNumber value="${cartItem.totalPrice}" pattern="$#,##0.00" /></td>
   <td><a href="<c:url value="/shop/removeItemFromCart.do"><c:param name="workingItemId" value="${cartItem.item.itemId}"/></c:url>">
-    <img border="0" src="<c:url value="/images/button_remove.gif"/>" />
+    <img border="0" src="../images/button_remove.gif" />
   </a></td>
   </tr>
 </c:forEach>
 <tr bgcolor="#FFFF88">
 <td colspan="7" align="right">
 <b>Sub Total: <fmt:formatNumber value="${cart.subTotal}" pattern="$#,##0.00" /></b><br/>
-<input type="image" border="0" src="<c:url value="/images/button_update_cart.gif"/>" name="update" />
+<input type="image" border="0" src="../images/button_update_cart.gif" name="update" />
 </td>
 <td>&nbsp;</td>
 </tr>
@@ -64,7 +64,7 @@
 </form>
 
 <c:if test="${cart.numberOfItems > 0}">
-<br /><center><a href="<c:url value="/shop/checkout.do"/>"><img border="0" src="<c:url value="/images/button_checkout.gif"/>" /></a></center>
+<br /><center><a href="<c:url value="/shop/checkout.do"/>"><img border="0" src="../images/button_checkout.gif" /></a></center>
 </c:if>
 
 </td>
