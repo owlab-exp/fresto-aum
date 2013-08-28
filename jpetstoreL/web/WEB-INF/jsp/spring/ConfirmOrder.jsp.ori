@@ -73,6 +73,6 @@ Country: </td><td><c:out value="${orderForm.order.shipCountry}"/>
 
 </table>
 <p>
-<center><a href="<c:url value="/shop/newOrder.do?_finish=true"/>"><img border="0" src="<c:url value="/images/button_continue.gif"/>" /></a></center>
+<center><a href="<c:url value="/shop/newOrder.do?_finish=true"/>"><img border="0" src="../images/button_continue.gif" /></a></center>
 
 <%@ include file="IncludeBottom.jsp" %>

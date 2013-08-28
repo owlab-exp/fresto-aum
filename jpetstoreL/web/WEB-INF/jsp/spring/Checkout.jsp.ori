@@ -58,7 +58,7 @@
   </c:if>
 </center>
 <br>
-<center><a href="<c:url value="/shop/newOrder.do"/>"><img border="0" src="<c:url value="/images/button_continue.gif"/>" /></a></center>
+<center><a href="<c:url value="/shop/newOrder.do"/>"><img border="0" src="../images/button_continue.gif" /></a></center>
 </td>
 
 <td valign="top" width="20%" align="right">&nbsp;</td>

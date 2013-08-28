@@ -48,7 +48,7 @@
 
 <tr bgcolor="#FFFF88"><td>
 <a href="<c:url value="/shop/addItemToCart.do"><c:param name="workingItemId" value="${item.itemId}"/></c:url>">
-  <img border="0" src="<c:url value="/images/button_add_to_cart.gif"/>"/>
+  <img border="0" src="../images/button_add_to_cart.gif"/>
 </a>
 </td></tr>
 </table>

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 		var callUuid = randomUUID();
 		var preCall = {
-			stage: 'preCall',
+			stage: 'beforeCall',
 			clientId: clientIP,
 			uuid: callUuid,
 			targetUrl: href,
@@ -54,7 +54,9 @@ $(document).ready(function() {
 			success: function(data) { 
 				var afterCall = {
 					stage: 'afterCall',
+					clientId: clientIP,
 					uuid: callUuid,
+					targetUrl: href,
 					timestamp: new Date().getTime()
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent',afterCall); 

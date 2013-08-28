@@ -9,14 +9,22 @@
  * This is a part of codes to know client IP address
  */
 
-		var clientIP = "no IP Address";
+		var clientIP = "Not set";
+
 		function getip(json){
-		//function getip(){
-			//alert(json.host);
-			//var xmlhttp = new XMLHttpRequest();
-			//xmlhttp.open("GET", "http://fresto1.owlab.com:9999/whatIsMyIPAddress", false);
-			//xmlhttp.send();
 			clientIP = json.ip;
-			//clientIP = xmlhttp.responseText;
 			//alert(clientIP);
 		}
+			
+			//var xmlhttp = new XMLHttpRequest();
+			//xmlhttp.onreadystatechange = function() {
+			//	if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			//	//if(xmlhttp.readyState == 4) {
+			//		clientIP = xmlhttp.responseText;
+			//		alert(clientIP);
+			//	}
+			//};
+			//xmlhttp.open("GET", "http://fresto1.owlab.com:9999/whatIsMyIPAddress?q=getip", false);
+			//xmlhttp.send();
+			//clientIP = json.ip;
+
