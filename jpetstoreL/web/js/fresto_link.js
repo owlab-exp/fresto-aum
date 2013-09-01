@@ -7,13 +7,13 @@ function interceptClick(e) {
 		var preCall = {
 			stage: 'beforeCall',
 			clientId: clientIP,
-			currentPage: window.location.href,
+			currentPlace: window.location.href,
 			uuid: callUuid,
 			targetUrl: href,
 			timestamp: beforeTimeStamp
 		}
 
-		var preCallJson = JSON.stringify(preCall);
+		//var preCallJson = JSON.stringify(preCall);
 
 		$.post('http://fresto1.owlab.com:9999/feedUIEvent',preCall); 
 
@@ -28,7 +28,7 @@ function interceptClick(e) {
 					uuid: callUuid,
 					targetUrl: href,
 					timestamp: afterTimeStamp,
-					elapsedTime: (afterTimeStamp - beforeTimeStamp);
+					elapsedTime: (afterTimeStamp - beforeTimeStamp)
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent',afterCall); 
 				$('body').html(data); 
