@@ -28,7 +28,8 @@ function interceptClick(e) {
 					uuid: callUuid,
 					targetUrl: href,
 					timestamp: afterTimeStamp,
-					elapsedTime: (afterTimeStamp - beforeTimeStamp)
+					elapsedTime: (afterTimeStamp - beforeTimeStamp),
+					httpStatus: 'success'
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent',afterCall); 
 				$('body').html(data); 
