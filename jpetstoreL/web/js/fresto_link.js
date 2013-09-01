@@ -25,6 +25,7 @@ function interceptClick(e) {
 				var afterCall = {
 					stage: 'afterCall',
 					clientId: clientIP,
+					currentPlace: window.location.href,
 					uuid: callUuid,
 					targetUrl: href,
 					timestamp: afterTimeStamp,
