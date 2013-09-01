@@ -8,7 +8,7 @@
 <meta http-equiv="expires" content="0">
 <META HTTP-EQUIV="Expires" CONTENT="Tue, 01 Jan 1980 1:00:00 GMT">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
- 		<script src="js/fresto_getip.js"></script>
+ 		<script src="<c:url value="/js/fresto_getip.js"/>"></script>
         	<script src="http://fresto1.owlab.com:9999/whatIsMyIPAddress"></script>
 		<script src="<c:url value="/js/jquery-1.10.2.js"/>"></script>
 		<script src="<c:url value="/js/randomUUID.js"/>"></script>
