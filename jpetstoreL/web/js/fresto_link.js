@@ -13,7 +13,6 @@ function interceptClick(e) {
 			timestamp: beforeTimeStamp
 		}
 
-		//var preCallJson = JSON.stringify(preCall);
 
 		$.post('http://fresto1.owlab.com:9999/feedUIEvent',preCall); 
 
