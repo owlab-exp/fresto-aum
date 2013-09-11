@@ -71,10 +71,12 @@
 	<copy todir="${build.home}/WEB-INF/lib">
 		<fileset dir="${lib.home}"/>
 	</copy>
-	<!-- for monitoring -->
+	<!-- for monitoring by javamelody-->
+	<!--
 	<copy todir="${build.home}/WEB-INF/lib">
 		<fileset dir="${lib-javamelody.home}"/>
 	</copy>
+	-->
 	<jar jarfile="${dist.home}/${app.name}.war" basedir="${build.home}"/>
 </target>
 
