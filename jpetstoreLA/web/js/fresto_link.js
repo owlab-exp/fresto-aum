@@ -35,7 +35,9 @@ function interceptClick(e) {
 					httpStatus: 'success'
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent',afterCall); 
+				window.history.pushState('Programmed State','JPetStore', href);
 				$('body').html(data); 
+				//document.write(data);
 				
 			}
 		});

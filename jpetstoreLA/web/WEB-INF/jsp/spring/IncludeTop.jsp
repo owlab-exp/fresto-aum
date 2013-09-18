@@ -1,7 +1,8 @@
 <%@ page contentType="text/html" %>
 <%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt"    uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html><head><title>JPetStore Demo</title>
+<html>
+<head><title>JPetStore Demo</title>
 <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
 <META HTTP-EQUIV="Cache-Control" CONTENT="max-age=0">
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
@@ -13,7 +14,6 @@
 		<script src="<c:url value="/js/jquery-1.10.2.js"/>"></script>
 		<script src="<c:url value="/js/randomUUID.js"/>"></script>
 		<script src="<c:url value="/js/fresto_link.js"/>"></script>
-
 </head>
 
 <body bgcolor="white">
