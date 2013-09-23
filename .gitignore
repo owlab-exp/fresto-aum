@@ -2,4 +2,4 @@
 *.war
 */build/*
 */dist/*
-*/.svn/*
+.svn
