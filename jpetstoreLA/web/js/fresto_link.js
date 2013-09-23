@@ -8,7 +8,7 @@ function interceptClick(e) {
 			stage: 'HTTP_REQUEST',
 			uuid: callUuid,
 			clientId: clientIP,
-			currentPlace: window.location.href,
+			referrer: window.location.href,
 			targetUrl: href,
 			method: 'GET',
 			requestTimestamp: request_timestamp
@@ -29,12 +29,12 @@ function interceptClick(e) {
 					stage: 'HTTP_RESPONSE',
 					uuid: callUuid,
 					clientId: clientIP,
-					currentPlace: window.location.href,
+					referrer: window.location.href,
 					targetUrl: href,
 					method: 'GET',
 					requestTimestamp: request_timestamp,
 					responseTimestamp: response_timestamp,
-					elapsedTime: (response_timestamp - reqeust_timestamp),
+					elapsedTime: (response_timestamp - request_timestamp),
 					httpStatus: 200
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent', response_event); 
