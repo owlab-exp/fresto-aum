@@ -32,7 +32,7 @@ function interceptClick(e) {
 					targetUrl: href,
 					timestamp: afterTimeStamp,
 					elapsedTime: (afterTimeStamp - beforeTimeStamp),
-					httpStatus: 'success'
+					httpStatus: 200
 				}
 				$.post('http://fresto1.owlab.com:9999/feedUIEvent',afterCall); 
 				window.history.pushState('Programmed State','JPetStore', href);
